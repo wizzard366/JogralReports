@@ -1,0 +1,34 @@
+[
+    {
+        "EmpresaId":9,
+        "ProductoId":1158,
+        "UMedidaId":"umedidaID1",
+        "Descripcion":"umedida description1",
+        "Base":1,
+        "Factor":33
+    },
+    {
+        "EmpresaId":9,
+        "ProductoId":1158,
+        "UMedidaId":"umedidaID2",
+        "Descripcion":"umedida description2",
+        "Base":2,
+        "Factor":33
+    },
+    {
+        "EmpresaId":9,
+        "ProductoId":1158,
+        "UMedidaId":"umedidaID3",
+        "Descripcion":"umedida description3",
+        "Base":3,
+        "Factor":33
+    },
+    {
+        "EmpresaId":9,
+        "ProductoId":1158,
+        "UMedidaId":"umedidaID4",
+        "Descripcion":"umedida description4",
+        "Base":4,
+        "Factor":33
+    }
+]

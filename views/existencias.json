@@ -1,0 +1,34 @@
+[
+    {
+        "EmpresaId":9,
+        "ProductoId":1158,
+        "Bodega":"Bodega 01",
+        "UMedidaId":1,
+        "DescUMedidaId":"Caja 01",
+        "SaldoActual":590
+    },
+    {
+        "EmpresaId":9,
+        "ProductoId":1158,
+        "Bodega":"Bodega 02",
+        "UMedidaId":1,
+        "DescUMedidaId":"Caja 01",
+        "SaldoActual":670
+    },
+    {
+        "EmpresaId":9,
+        "ProductoId":1158,
+        "Bodega":"Bodega 03",
+        "UMedidaId":1,
+        "DescUMedidaId":"Caja 01",
+        "SaldoActual":860
+    },
+    {
+        "EmpresaId":9,
+        "ProductoId":1158,
+        "Bodega":"Bodega 04",
+        "UMedidaId":1,
+        "DescUMedidaId":"Caja 01",
+        "SaldoActual":479
+    }
+]

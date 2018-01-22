@@ -1,0 +1,68 @@
+[
+    {
+        "EmpresaId":9,
+        "ProductoId":1158,
+        "UMedidaId":1,
+        "DescUMedida":"caga 100 tabletas",
+        "TipoPrecioId":0,
+        "TipoPrecio":"precio 0",
+        "PrecioVenta":11.60,
+        "MargenSobreCosto":5
+
+    },
+    {
+        "EmpresaId":9,
+        "ProductoId":1158,
+        "UMedidaId":1,
+        "DescUMedida":"caga 100 tabletas",
+        "TipoPrecioId":1,
+        "TipoPrecio":"precio 1",
+        "PrecioVenta":11.60,
+        "MargenSobreCosto":5
+
+    },
+    {
+        "EmpresaId":9,
+        "ProductoId":1158,
+        "UMedidaId":1,
+        "DescUMedida":"caga 100 tabletas",
+        "TipoPrecioId":1,
+        "TipoPrecio":"precio 2",
+        "PrecioVenta":123.60,
+        "MargenSobreCosto":5
+
+    },
+    {
+        "EmpresaId":9,
+        "ProductoId":1158,
+        "UMedidaId":1,
+        "DescUMedida":"caga 100 tabletas",
+        "TipoPrecioId":3,
+        "TipoPrecio":"precio 3",
+        "PrecioVenta":551.60,
+        "MargenSobreCosto":5
+
+    },
+    {
+        "EmpresaId":9,
+        "ProductoId":1158,
+        "UMedidaId":1,
+        "DescUMedida":"caga 100 tabletas",
+        "TipoPrecioId":4,
+        "TipoPrecio":"precio 4",
+        "PrecioVenta":1155.60,
+        "MargenSobreCosto":5
+
+    },
+    {
+        "EmpresaId":9,
+        "ProductoId":1158,
+        "UMedidaId":1,
+        "DescUMedida":"caga 100 tabletas",
+        "TipoPrecioId":5,
+        "TipoPrecio":"precio 5",
+        "PrecioVenta":13331.60,
+        "MargenSobreCosto":5
+
+    }
+]

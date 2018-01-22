@@ -1,0 +1,24 @@
+[
+    {
+        "EmpresaId":9,
+        "productoId":1158,
+        "descripcion":"alcagastric algo",
+        "area":"esta es una area",
+        "subarea":"esta es la subarea",
+        "marca":"marca",
+        "costo":"100",
+        "afectoIva":true
+
+    },
+    {
+        "EmpresaId":9,
+        "productoId":1158,
+        "descripcion":"alcagastric algo",
+        "area":"esta es una area",
+        "subarea":"esta es la subarea",
+        "marca":"marca",
+        "costo":"100",
+        "afectoIva":true
+
+    }
+]

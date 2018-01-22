@@ -1,0 +1,46 @@
+[
+    {
+        "EmpresaId":9,
+        "ProductoId":1158,
+        "UMedidaId":1,
+        "DescUMedidaId":"descripcion 1",
+        "TipoPrecioId":1,
+        "Desde":1000,
+        "Hasta":10000,
+        "PrecioVenta":10.50,
+        "MargenSobreCosto":10
+    },
+    {
+        "EmpresaId":9,
+        "ProductoId":1158,
+        "UMedidaId":1,
+        "DescUMedidaId":"descripcion 1",
+        "TipoPrecioId":1,
+        "Desde":2,
+        "Hasta":20,
+        "PrecioVenta":20.50,
+        "MargenSobreCosto":20
+    },
+    {
+        "EmpresaId":9,
+        "ProductoId":1158,
+        "UMedidaId":1,
+        "DescUMedidaId":"descripcion 1",
+        "TipoPrecioId":1,
+        "Desde":3,
+        "Hasta":30,
+        "PrecioVenta":30.50,
+        "MargenSobreCosto":30
+    },
+    {
+        "EmpresaId":9,
+        "ProductoId":1158,
+        "UMedidaId":1,
+        "DescUMedidaId":"descripcion 1",
+        "TipoPrecioId":1,
+        "Desde":4,
+        "Hasta":40,
+        "PrecioVenta":40.50,
+        "MargenSobreCosto":40
+    }
+]
