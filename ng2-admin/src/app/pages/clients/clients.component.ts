@@ -19,7 +19,7 @@ export class ClientsComponent {
     
     keys=["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
     keys2=["Ene","Feb","Mar","Abr","May","Jun","Jul","Ago","Sep","Oct","Nov","Dic"];
-    extendedKeys=['Vendedor','Cliente','NombreCliente','Total']
+    extendedKeys=['Vendedor','Cliente','NombreCliente','Total','Ano','class']
     public clientName:string;
     public selectedClientId:any;
     public clients = [];
@@ -39,6 +39,7 @@ export class ClientsComponent {
     public barChartOptions:any;
     public labels:any;
     public clients_data:any;
+    public years:any;
 
     constructor(private clientsSerivce:ClientsService,private _chartistJsService:ChartistJsService,private dateService:DateService) {
         this.showSelect=false;
@@ -58,13 +59,30 @@ export class ClientsComponent {
 
             this.getTopClientsInfo();
 
+            let currentYear= this.date.getFullYear();
+            this.currentYear= this.date.getFullYear();
+            this.years=[currentYear,currentYear-1,currentYear-2];
+
+
         })
 
         
     }
 
+    isFirst(i){
+        
+        if (i===0){
+            
+            return true;
+        }
+        return false;
+    }
 
-    
+    setSelectedYear(value){
+        this.currentYear=value;
+        
+        this.getClientInfoByYear();
+    }
 
     getClientInfoById(event){
         this.getClientInfo(this.clienteId,this.date.getFullYear());
@@ -83,7 +101,7 @@ export class ClientsComponent {
         this.table_data=[];
         
         
-        this.clientsSerivce.getClientInfo(clientId,year).subscribe(data=>{
+        this.clientsSerivce.getClientInfo(clientId,year-2).subscribe(data=>{
             
             if (typeof data === 'undefined' || data.length == 0){
                 this.showNotFoundAlert=true;
@@ -91,16 +109,30 @@ export class ClientsComponent {
             }else{
                 this.clienteId=clientId;
                 this.currentYear=year;
-                data.forEach(element => {
+                let lastProcessedYear=0;
+                data.forEach((element,index) => {
+                    console.log('lastProcessedYear:',lastProcessedYear);
+                    if(lastProcessedYear===element[this.extendedKeys[4]]){
+                        console.log("this has another year");
+                    }
                     this.keys.forEach(key=>{
+                        
+                        
                         temp_graph_data.push(Number(element[key]));
                         temp_table_data[key]=Number(element[key]).toLocaleString('en-US');
                         
     
                     })
+                    lastProcessedYear=element[this.extendedKeys[4]];
                     temp_table_data[this.extendedKeys[3]]=Number(element[this.extendedKeys[3]]).toLocaleString('en-US');
+                    temp_table_data[this.extendedKeys[4]]=Number(element[this.extendedKeys[4]]);
+                    temp_table_data[this.extendedKeys[0]]=element[this.extendedKeys[0]];
+                    temp_table_data[this.extendedKeys[5]]=chartistColorClasses[index];
+                    
                     series.push(temp_graph_data);
+                    temp_graph_data=[];
                     this.table_data.push(temp_table_data);
+                    temp_table_data=[];
                     this.name=element[this.extendedKeys[2]];
                     this.seller=element[this.extendedKeys[0]];
                     
@@ -112,6 +144,8 @@ export class ClientsComponent {
                     series:series,
                     labels:this.keys2,
                 }
+                console.log("graph_data:",this.graph_data);
+                console.log("table_data:",this.table_data);
                 this.showLoading=false;
                 this.display_graph=true;
             }            

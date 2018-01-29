@@ -108,12 +108,15 @@
                                         <input type="text" [(ngModel)]="seller" name="seller" class="form-control" id="seller" disabled>
                                     </div>    
                                 </form>                             
-                                <form (submit)="getClientInfoByYear()">
+                               <!--  <form (submit)="getClientInfoByYear()">
                                     <div class="form-group">
                                         <label>Año</label>  
-                                        <input type="text" [(ngModel)]="currentYear" name="currentYear" class="form-control" id="currentYear">
+                                        
+                                        <select class="form-control" id="currentYear" name="currentYear" (change)="setSelectedYear($event.target.value)" [(ngModel)]="currentYear">
+                                            <option *ngFor="let year of years; let i=index" [value]="year" [selected]="isFirst(i)">{{year}}</option>
+                                        </select>
                                     </div>
-                                </form>
+                                </form> -->
                             </div>
                         </div>
                     <ba-chartist-chart  baChartistChartClass="ct-chart" baChartistChartType="Line" [baChartistChartData]="graph_data" [baChartistChartOptions]="chart_options" >
@@ -121,9 +124,13 @@
                     
                     
                     <div class="table-responsive" *ngIf="display_graph">
-                            <table class="table table-bordered table-condensed">
+                            <table class="table compact table-bordered table-condensed">
                                     <thead>
                                         <tr class="black-muted-bg">
+                                                <th class="align-center"></th>
+                                                <th class="align-center">Año</th>
+                                                <th class="align-center">Vendedor</th>
+                                                <th class="align-center">Total</th>
                                             <th class="align-center">Enero</th>
                                             <th class="align-center">Febrero</th>
                                             <th class="align-center">Marzo</th>
@@ -136,11 +143,17 @@
                                             <th class="align-center">Octubre</th>
                                             <th class="align-center">Noviembre</th>
                                             <th class="align-center">Diciembre</th>
-                                            <th class="align-center">Total</th>
+                                           
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr *ngFor="let item of table_data" class="no-top-border">
+                                            <td class="align-right">
+                                                    <i class="ion-ios-circle-filled {{item.class}} ct-point"></i>
+                                                </td>
+                                            <td class="align-right">{{item.Ano}}</td> 
+                                            <td class="align-right">{{item.Vendedor}}</td>  
+                                            <td class="align-right">Q.{{item.Total}}</td> 
                                             <td class="align-right">Q.{{item.Enero}}</td>
                                             <td class="align-right">Q.{{item.Febrero}}</td>
                                             <td class="align-right">Q.{{item.Marzo}}</td>
@@ -153,7 +166,7 @@
                                             <td class="align-right">Q.{{item.Octubre}}</td>
                                             <td class="align-right">Q.{{item.Noviembre}}</td>
                                             <td class="align-right">Q.{{item.Diciembre}}</td>
-                                            <td class="align-right">Q.{{item.Total}}</td>                                                                       
+                                                                                                                 
                                         </tr>
                                     </tbody>
                             </table>

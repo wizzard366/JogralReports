@@ -557,10 +557,10 @@ apiRoutes.get('/clients/salesperyear/:year/:cuser', function (req, res) {
         'Round(SUM(CASE WHEN Mes = 12 THEN Total ELSE 0 END),2) AS Diciembre, ' +
         'Round(SUM(Total),2) AS Total ' +
         'FROM (SELECT f.EmpresaId,Ano = DATEPART(YYYY,f.Fecha), Mes = DATEPART(MM,f.Fecha),Cliente = f.ClienteId,NombreCliente = f.Nombre,Vendedor = v.NombreCompleto,Total = Sum(f.Total)FROM dbo.FACDocumento f, dbo.FACXVendedor v ' +
-        'Where f.EmpresaId=@empresaid And f.AplicadoInvent=1 And f.Anulado=0 And datepart(yyyy,f.Fecha)=@year And f.UsuarioPedido <> \'NPineda9\' and v.EmpresaId=f.EmpresaId And v.VendedorId=f.VendedorId ' +
+        'Where f.EmpresaId=@empresaid And f.AplicadoInvent=1 And f.Anulado=0 And datepart(yyyy,f.Fecha)>=@year And f.UsuarioPedido <> \'NPineda9\' and v.EmpresaId=f.EmpresaId And v.VendedorId=f.VendedorId ' +
         'GROUP BY f.EmpresaId, DATEPART(YYYY,f.Fecha),DATEPART(MM,f.Fecha), f.ClienteId, f.Nombre,v.NombreCompleto ' +
         ') d WHERE d.Cliente = @clientUser GROUP BY d.EmpresaId,d.Ano,d.Cliente,d.NombreCliente,d.Vendedor ' +
-        'Order By Total DESC ';
+        'Order By Ano ASC ';
 
     console.log("query:",query);    
     
