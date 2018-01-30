@@ -25,7 +25,7 @@ export const routes: Routes = [
     children: [
       { path: '', redirectTo: 'reportes', pathMatch: 'full' },
       // { path: 'dashboard', loadChildren: 'app/pages/dashboard/dashboard.module#DashboardModule' },
-      { path: 'precios', loadChildren: 'app/pages/precios/precios.module#PreciosModule',canActivate: [AuthGuard]},
+      { path: 'precios', loadChildren: 'app/pages/precios/precios.module#PreciosModule', canActivate: [AuthGuard]},
       { path: 'reportes', loadChildren: 'app/pages/reports/reports.module#ReportsModule', canActivate: [AuthGuard]},
       { path: 'laboratorios', loadChildren: 'app/pages/laboratories/laboratories.module#LaboratoriesModule', canActivate: [AuthGuard]},
       { path: 'vendedores', loadChildren: 'app/pages/sellers/sellers.module#SellersModule', canActivate: [AuthGuard]},
